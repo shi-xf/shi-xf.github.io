@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.表单获取元素先获取到form元素通过name值来得到表单元素同一个name获取的是数组类型，需要加下标 2.表单事件form.onsubmit &#x3D; function(){}return true 表单继续提交return false 阻止表单继续提交form.onreset &#x3D; function(){}confirm() 带选择项的对话框 点击确定：返回true 取消：返回falseform.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="day_10">
+<meta property="og:url" content="http://yoursite.com/2020/05/10/day_10/index.html">
+<meta property="og:site_name" content="shi&#39;blog">
+<meta property="og:description" content="1.表单获取元素先获取到form元素通过name值来得到表单元素同一个name获取的是数组类型，需要加下标 2.表单事件form.onsubmit &#x3D; function(){}return true 表单继续提交return false 阻止表单继续提交form.onreset &#x3D; function(){}confirm() 带选择项的对话框 点击确定：返回true 取消：返回falseform.">
+<meta property="article:published_time" content="2020-05-10T03:13:05.298Z">
+<meta property="article:modified_time" content="2020-05-10T02:18:51.636Z">
+<meta property="article:author" content="Shi">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/05/10/day_10/"/>
+
+
+
+
+
+  <title>day_10 | shi'blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">shi'blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/10/day_10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shi'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">day_10</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-10T11:13:05+08:00">
+                2020-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="1-表单获取元素"><a href="#1-表单获取元素" class="headerlink" title="1.表单获取元素"></a>1.表单获取元素</h3><p>先获取到form元素<br>通过name值来得到表单元素<br>同一个name获取的是数组类型，需要加下标</p>
+<h3 id="2-表单事件"><a href="#2-表单事件" class="headerlink" title="2.表单事件"></a>2.表单事件</h3><p>form.onsubmit = function(){}<br>return true 表单继续提交<br>return false 阻止表单继续提交<br>form.onreset = function(){}<br>confirm() 带选择项的对话框 点击确定：返回true 取消：返回false<br>form.元素.onfocus = function(){} 表单元素获取焦点<br>form.元素.onblur = function(){} 表单元素失去焦点</p>
+<h3 id="3-表单操作"><a href="#3-表单操作" class="headerlink" title="3.表单操作"></a>3.表单操作</h3><p>表单外的元素点击提交表单内容<br>form.submit(); 触发表单提交事件<br>form.reset(); 触发表单重置事件<br>form.元素.focus() 元素获取焦点的方法<br>form.元素.select() 元素里面的内容被选中的事件</p>
+<h3 id="4-BOM"><a href="#4-BOM" class="headerlink" title="4.BOM"></a>4.BOM</h3><p>BOM：window就是BOM的核心<br>    ①提供了操作浏览器相关的接口（API）<br>    ②js的顶层对象 global object，定义的全局变量会自动注册为window的属性，函数变成window的方法</p>
+<h3 id="5-BOM的窗口"><a href="#5-BOM的窗口" class="headerlink" title="5.BOM的窗口"></a>5.BOM的窗口</h3><p>alert() 警告弹窗<br>window.confirm() 确认弹窗（确认提示信息）点击确定：返回true 取消：返回false<br>window.prompt(“提示信息”)带输入框的弹窗（确认提示信息，默认字符串） 点击确定：返回输入文本 取消：返回null</p>
+<h3 id="6-open和close"><a href="#6-open和close" class="headerlink" title="6.open和close"></a>6.open和close</h3><p>open()  打开页面（url，打开方式（_blank默认,新窗口打开,_self，当前窗口打开），新窗口的一些配置项）<br>例：open(“网址”,”_self”,”width=300，height=300”); 打开一个新页面,_self代表在本页面打开<br>行间使用open：不能省掉window<br>close() 关闭当前窗口</p>
+<h3 id="7-location"><a href="#7-location" class="headerlink" title="7.location"></a>7.location</h3><p>location:保存用户的地址栏信息，同时也有一定的导航功能<br>完整的url：location.href<br>location = “网址” 页面跳转<br>主机信息：host = hostName+port<br>location.hostName：主机名（IP地址）  location.port：端口号<br>location.pathName：文件路径<br>location.protocol：协议<br>location.hast（哈希值）<br>location.search（查询内容）</p>
+<h3 id="8-navigator"><a href="#8-navigator" class="headerlink" title="8.navigator"></a>8.navigator</h3><p>navigator:保存用户代理信息</p>
+<h3 id="9-history"><a href="#9-history" class="headerlink" title="9.history"></a>9.history</h3><p>history:保存用户历史访问信息，历史窗口访问<br>history.go(-1) 退后一个页面<br>history.go(1)前进一个页面</p>
+<h3 id="10-client"><a href="#10-client" class="headerlink" title="10.client"></a>10.client</h3><p>clientWidth = width+padding 内部容器的宽<br>clientHight  内部容器的高<br>clientLeft 左边框的宽度<br>clientTop 上边框的宽度<br>document.documentElement.clientWidth 窗口可视区域的宽<br>document.documentElement.clientHight 窗口可视区域的高</p>
+<h3 id="11-offset"><a href="#11-offset" class="headerlink" title="11.offset"></a>11.offset</h3><p>offsetWidth  width+padding+border 元素的占位宽度<br>offsetHight 元素的占位高度<br>offsetLeft 距离定位参考元素的左偏移值<br>offsetTop 距离定位参考元素的上偏移值</p>
+<h3 id="12-scroll"><a href="#12-scroll" class="headerlink" title="12.scroll"></a>12.scroll</h3><p>元素内部内容的实际宽高<br>scrollWidth<br>scrollHight<br>元素.onscroll = function(){}<br>scrollLeft 内容被卷动到左侧的部分宽度值<br>scrollTop 内容被卷动到上侧的部分高度值<br>window.onscroll = function(){<br>    console.log(document.documentElement.scrollTop) //网页内容被卷动到上侧的高度<br>}</p>
+<h3 id="13-懒加载"><a href="#13-懒加载" class="headerlink" title="13.懒加载"></a>13.懒加载</h3><h3 id="14-BOM事件"><a href="#14-BOM事件" class="headerlink" title="14.BOM事件"></a>14.BOM事件</h3><p>onload<br>onscroll<br>window.onresize改变窗口尺寸时触发</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/05/10/day_11/" rel="next" title="day_11">
+                <i class="fa fa-chevron-left"></i> day_11
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/05/10/day_09/" rel="prev" title="day_09">
+                day_09 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Shi</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7Carchive">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-表单获取元素"><span class="nav-number">1.</span> <span class="nav-text">1.表单获取元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-表单事件"><span class="nav-number">2.</span> <span class="nav-text">2.表单事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-表单操作"><span class="nav-number">3.</span> <span class="nav-text">3.表单操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-BOM"><span class="nav-number">4.</span> <span class="nav-text">4.BOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-BOM的窗口"><span class="nav-number">5.</span> <span class="nav-text">5.BOM的窗口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-open和close"><span class="nav-number">6.</span> <span class="nav-text">6.open和close</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-location"><span class="nav-number">7.</span> <span class="nav-text">7.location</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-navigator"><span class="nav-number">8.</span> <span class="nav-text">8.navigator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-history"><span class="nav-number">9.</span> <span class="nav-text">9.history</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-client"><span class="nav-number">10.</span> <span class="nav-text">10.client</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-offset"><span class="nav-number">11.</span> <span class="nav-text">11.offset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-scroll"><span class="nav-number">12.</span> <span class="nav-text">12.scroll</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-懒加载"><span class="nav-number">13.</span> <span class="nav-text">13.懒加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-BOM事件"><span class="nav-number">14.</span> <span class="nav-text">14.BOM事件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shi</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

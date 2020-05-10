@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.数组数组：一系列有序元素的集合创建数组：①字面量表达      ②使用函数 var arr &#x3D; new Array(1,2,3)    只传入一个数字时，代表数组长度数组可以储存任意类型数据 2.数组的常用方法栈方法 LIFO（后进先出），只能在栈顶操作push()：在数组的尾部添加若干项      返回 数组的新长度pop()：去除数组的最后一项     返回被去除的项队列方法 FIFO（先">
+<meta property="og:type" content="article">
+<meta property="og:title" content="day_08">
+<meta property="og:url" content="http://yoursite.com/2020/05/10/day_08/index.html">
+<meta property="og:site_name" content="shi&#39;blog">
+<meta property="og:description" content="1.数组数组：一系列有序元素的集合创建数组：①字面量表达      ②使用函数 var arr &#x3D; new Array(1,2,3)    只传入一个数字时，代表数组长度数组可以储存任意类型数据 2.数组的常用方法栈方法 LIFO（后进先出），只能在栈顶操作push()：在数组的尾部添加若干项      返回 数组的新长度pop()：去除数组的最后一项     返回被去除的项队列方法 FIFO（先">
+<meta property="article:published_time" content="2020-05-10T03:13:05.282Z">
+<meta property="article:modified_time" content="2020-05-10T02:12:51.311Z">
+<meta property="article:author" content="Shi">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/05/10/day_08/"/>
+
+
+
+
+
+  <title>day_08 | shi'blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">shi'blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/10/day_08/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shi'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">day_08</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-10T11:13:05+08:00">
+                2020-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="1-数组"><a href="#1-数组" class="headerlink" title="1.数组"></a>1.数组</h3><p>数组：一系列有序元素的集合<br>创建数组：①字面量表达<br>      ②使用函数 var arr = new Array(1,2,3)    只传入一个数字时，代表数组长度<br>数组可以储存任意类型数据</p>
+<h3 id="2-数组的常用方法"><a href="#2-数组的常用方法" class="headerlink" title="2.数组的常用方法"></a>2.数组的常用方法</h3><p>栈方法 LIFO（后进先出），只能在栈顶操作<br>push()：在数组的尾部添加若干项<br>      返回 数组的新长度<br>pop()：去除数组的最后一项<br>     返回被去除的项<br>队列方法 FIFO（先进先出）<br>shift()：去除数组的第一项<br>      返回被去除的项<br>unshift()：在数组的头部添加若干项<br>       返回数组的新长度</p>
+<h3 id="3-数组的增删改"><a href="#3-数组的增删改" class="headerlink" title="3.数组的增删改"></a>3.数组的增删改</h3><p>①增<br>splice(1,0,”jack”)<br>1代表添加项起始下标<br>0代表没有删除的项<br>“jack”代表被添加的项，可添加多项<br>返回数组的新长度<br>②删<br>splice(1,2);<br>1代表起始下标<br>2代表需要被删除的项<br>返回被删除项构成的数组<br>③改<br>splice(1,1,”zhian”);</p>
+<h3 id="4，数组去重"><a href="#4，数组去重" class="headerlink" title="4，数组去重"></a>4，数组去重</h3><h3 id="5-数组的排序"><a href="#5-数组的排序" class="headerlink" title="5.数组的排序"></a>5.数组的排序</h3><p>①选择排序<br>②冒泡排序</p>
+<h3 id="6-数组的sort方法"><a href="#6-数组的sort方法" class="headerlink" title="6.数组的sort方法"></a>6.数组的sort方法</h3><p>sort();令数组排序，默认升序<br>比较函数<br>a，b 任意相邻的两项<br>sort(function(a,b){<br>    return b-a; 降序（正数）<br>    return a-b; 升序（负数）<br>})<br>比较字符串数字用函数比较<br>Date.parse(“2019-4-23”) 把日期字符串转化为时间戳</p>
+<h3 id="7-迭代方法-ie9"><a href="#7-迭代方法-ie9" class="headerlink" title="7.迭代方法 ie9+"></a>7.迭代方法 ie9+</h3><p>value代表数组中的每一项 index代表当前项的下标<br>every(function(value,index){<br>    return value&gt;0; //判断每一项是否大于0<br>})<br>every：返回每一项是否都满足函数内的条件，都满足返回true，任意一项不满足返回false<br>some：返回是否有任意一项满足函数内的条件，有一个满足就返回true，都不满足返回false<br>filter：返回满足条件的项构成的新数组<br>map：返回一个新数组<br>forEach：没有返回值，相当于for循环</p>
+<h3 id="8-其他方法"><a href="#8-其他方法" class="headerlink" title="8.其他方法"></a>8.其他方法</h3><p>reverse(); 逆序<br>concat(); 返回一个多个数组的每一项拼接的新数组<br>join() 和split相反，通过指定的字符将数组拼接成字符串<br>indexOf()<br>lastIndexOf()    </p>
+<h3 id="9-Math"><a href="#9-Math" class="headerlink" title="9.Math"></a>9.Math</h3><p>Math.PI //3.1415926 圆周率<br>Math.round(1.1) //1 四舍五入<br>Math.ceil(1.1) //2 向上取整,有小数就进1<br>Math.floor(1.9)  //1 向下取整,只看整数<br>Math.pow(2,3) //2的3次幂<br>Math.aqrt(9)//开方<br>Math.abs(-1) //绝对值<br>Math.random() //随机数[0,1) </p>
+<h3 id="10-随机验证码"><a href="#10-随机验证码" class="headerlink" title="10.随机验证码"></a>10.随机验证码</h3>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/05/10/day_07/" rel="prev" title="day_07">
+                day_07 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Shi</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7Carchive">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-数组"><span class="nav-number">1.</span> <span class="nav-text">1.数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-数组的常用方法"><span class="nav-number">2.</span> <span class="nav-text">2.数组的常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-数组的增删改"><span class="nav-number">3.</span> <span class="nav-text">3.数组的增删改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4，数组去重"><span class="nav-number">4.</span> <span class="nav-text">4，数组去重</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-数组的排序"><span class="nav-number">5.</span> <span class="nav-text">5.数组的排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-数组的sort方法"><span class="nav-number">6.</span> <span class="nav-text">6.数组的sort方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-迭代方法-ie9"><span class="nav-number">7.</span> <span class="nav-text">7.迭代方法 ie9+</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-其他方法"><span class="nav-number">8.</span> <span class="nav-text">8.其他方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-Math"><span class="nav-number">9.</span> <span class="nav-text">9.Math</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-随机验证码"><span class="nav-number">10.</span> <span class="nav-text">10.随机验证码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shi</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

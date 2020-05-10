@@ -248,7 +248,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/09/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/10/day_01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shi">
@@ -267,7 +267,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/05/09/hello-world/" itemprop="url">hello-world</a></h1>
+                <a class="post-title-link" href="/2020/05/10/day_01/" itemprop="url">day_01</a></h1>
         
 
         <div class="post-meta">
@@ -279,8 +279,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-09T11:03:55+08:00">
-                2020-05-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-10T11:13:05+08:00">
+                2020-05-10
               </time>
             
 
@@ -319,7 +319,1256 @@
       
         
           
-            <p>my blog</p>
+            <h3 id="1-javascript简介"><a href="#1-javascript简介" class="headerlink" title="1.javascript简介"></a>1.javascript简介</h3><p>javascript组成<br>    ECMAscript 规则，语法，命名规范<br>    dom(document object model)文档对象模型<br>    bom(browser object model)浏览器对象模型</p>
+<h3 id="2-js的引入方式"><a href="#2-js的引入方式" class="headerlink" title="2.js的引入方式"></a>2.js的引入方式</h3><p>①内嵌式<br>  onclick点击 alert()弹窗/警告框<br>②内部</p>
+  <script></script> 一般放在html后面
+<p>③外部<br>  <script src="路径名"></script></p>
+<h3 id="3-js语法"><a href="#3-js语法" class="headerlink" title="3.js语法"></a>3.js语法</h3><p>//单行注释<br>/* */多行注释</p>
+<p>弱类型<br>var a=123; var声明变量 a变量 123是a的值<br>console.log(); 输出到控制台</p>
+<p>声明变量的写法<br>①先声明，再赋值<br>②声明并赋值<br>③同时声明多个变量 var d=1,e=2,f=3;</p>
+<p>声明多个值相同的变量<br>var x=y=z=1;<br>注意：变量名不要重复，后面会覆盖前面的</p>
+<p>变量名的命名规则：<br>    ①严格区分大小写<br>    ②见名识义 可以使用驼峰命名<br>    ③由英文，数字，_，$组成，数字不能开头<br>    ④不能使用关键字和保留字<br>;和回车表示一条语句结束</p>
+<h3 id="4-简单的交互"><a href="#4-简单的交互" class="headerlink" title="4.简单的交互"></a>4.简单的交互</h3><p>找到谁，干什么，怎么做<br>①找到谁<br>通过id名获取元素 document.getElementById(“id名”);<br>var obox=document.getElementById(“id名”);<br>②干什么 onclick点击事件<br>obox.onclick=function(){点击以后做的事情};<br>③怎么做<br>obox.onclick=function(){<br>    alert(1);<br>};  </p>
+<h3 id="5-onload-当script写在元素前面时解决未定义的问题"><a href="#5-onload-当script写在元素前面时解决未定义的问题" class="headerlink" title="5.onload 当script写在元素前面时解决未定义的问题"></a>5.onload 当script写在元素前面时解决未定义的问题</h3><p>window.onload=function(){</p>
+<p>}<br>window.onload 页面加载完成以后执行的函数   </p>
+<h3 id="6-鼠标中的其他事件"><a href="#6-鼠标中的其他事件" class="headerlink" title="6.鼠标中的其他事件"></a>6.鼠标中的其他事件</h3><p>ondblclick 双击<br>onmouseover 移入（移入子元素时也会触发）<br>onmouseenter 移入（移入子元素时不会再触发）<br>onmouseout 离开（离开或进入子元素也会触发）<br>onmouseleave 离开（离开或进入子元素不会触发）<br>onmousemove 移动<br>onmousedown 鼠标按下<br>onmouseup 鼠标抬起<br>oncontextmenu 右键菜单  </p>
+<h3 id="7-操作元素内容（当存储在一个变量时，那个变量无法赋值，只能用innerHTML去赋值）"><a href="#7-操作元素内容（当存储在一个变量时，那个变量无法赋值，只能用innerHTML去赋值）" class="headerlink" title="7.操作元素内容（当存储在一个变量时，那个变量无法赋值，只能用innerHTML去赋值）"></a>7.操作元素内容（当存储在一个变量时，那个变量无法赋值，只能用innerHTML去赋值）</h3><p>元素.innerHTML 获取元素的内容,赋值可更改内容，内容中可识别标签<br>元素.innerText 只有文本，赋值可更改内容，不能识别标签<br>元素.value 获取表单中的内容，赋值可更改内容</p>
+<h3 id="8-js操作html中的属性"><a href="#8-js操作html中的属性" class="headerlink" title="8.js操作html中的属性"></a>8.js操作html中的属性</h3><p>元素.属性名（赋值只能用元素.属性名）<br>例 var aa = 元素.属性名  不能用aa赋值<br>操作类名时只能用元素.className</p>
+<h3 id="9-js操作css的属性"><a href="#9-js操作css的属性" class="headerlink" title="9.js操作css的属性"></a>9.js操作css的属性</h3><p>元素.style.属性名<br>中间有-的属性名全部变为-后面的首字母大写<br>设置的css样式有多个时，优先使用添加类名或者id名</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/10/day_02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shi'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/10/day_02/" itemprop="url">day_02</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-10T11:13:05+08:00">
+                2020-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-数据类型-typeof-n1-或typeof-n1-检测数字类型"><a href="#1-数据类型-typeof-n1-或typeof-n1-检测数字类型" class="headerlink" title="1.数据类型 typeof(n1)或typeof n1 检测数字类型"></a>1.数据类型 typeof(n1)或typeof n1 检测数字类型</h3><p>基本数据类型  存储在栈内存中<br>number 数字 8进制以0开头，后边不超过8  16进制 以0x开头 NaN(not a number)<br>string 字符串 带引号的数据类型都是String类型 length获取字符串长度<br>boolean 布尔  非0为真，非空为真<br>null null类型的值只有null，没有的对象，typeof返回值为object,表示空对象指针<br>undefined  underfined类型的值只有underfined，没赋值</p>
+<p>复杂数据类型（引用数据类型）存储在堆内存中，复合数据类型的变量保存的是地址<br>Object对象 ①通过关键字new实例化对象 ②字面量形式 typeof返回值为object<br>Array 数组 ①通过new关键字实例化创建 ②字面创建 typeof返回值为object<br>function 函数  typeof返回值为function<br>例：①new Object();<br>    ②对象存储值时以键值对形式存 键名:键值 键值对和键值对以逗号隔开<br>    var obj = {name:”张三”,age:18}<br>    obj.name/obj[“name”] 取里面的值<br>    ①new Array();<br>      new Array(3); 3表示数组长度<br>      new Array(3,4,5); 3,4,5表示数组中的内容<br>    ②var ary = []; 里面可存任意数据类型<br>    ①function 函数名(){代码块}<br>      函数调用：函数名();<br>    ②var fun = function(){代码块}<br>      函数调用：fun();</p>
+<h3 id="2-a-instanceof-b"><a href="#2-a-instanceof-b" class="headerlink" title="2.a instanceof b"></a>2.a instanceof b</h3><p>a是否是数据类型b（只能用于复合数据类型，检测基本数据类型需要通过关键词new实例化）<br>例：var n = new Number(123);<br>    console.log(n instanceof Number);</p>
+<h3 id="3-数据类型转换"><a href="#3-数据类型转换" class="headerlink" title="3.数据类型转换"></a>3.数据类型转换</h3><p>常见的转为Number和String类型<br>强制转换 方法<br>    ①Number()<br>    ②parseInt<br>    ③parseFloat<br>    parseFloat比parseInt多识别一个小数点<br>隐式转换 在运算过程中转换</p>
+<h3 id="4-isNaN"><a href="#4-isNaN" class="headerlink" title="4.isNaN()"></a>4.isNaN()</h3><p>判断一个变量是否不是一个数字，不是数字返回true，是数字的时候返回false<br>在判断之前会先使用Number转换变量</p>
+<h3 id="5-运算符"><a href="#5-运算符" class="headerlink" title="5.运算符"></a>5.运算符</h3><p>①算术运算符  ++表示自增，当++在表达式中时，++在前表示先计算后赋值，++在后时表示先赋值再计算，–同理<br>②赋值 += -= *= /= %= =<br>③逻辑 &amp;&amp;与 ||或  ！非<br>④比较 &gt; &lt; &gt;= &lt;= == === != !==<br>⑤三目运算符（三元运算符） 条件?表达式1:表达式2; 条件成立，表达式1执行，条件不成立时，表达式2执行（表达式1和表达式2都必须是一条语句）<br>小数之间的+-计算不是很准确，不要作为判断条件<br>==，!=比较值<br>===，!== 绝对等于，比较值和类型</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/10/day_03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shi'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/10/day_03/" itemprop="url">day_03</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-10T11:13:05+08:00">
+                2020-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-其他类型转为String"><a href="#1-其他类型转为String" class="headerlink" title="1.其他类型转为String"></a>1.其他类型转为String</h3><p>String()<br>变量.toString() 括号里不用填东西</p>
+<h3 id="2-流程语句"><a href="#2-流程语句" class="headerlink" title="2.流程语句"></a>2.流程语句</h3><p>顺序控制 从上到下执行<br>条件语句 if if…else if..else if..else… switch<br>循环语句 for.. for..in.. while.. do..while<br>其他 break continue<br>①if(条件){在条件满足时执行}<br>可以省略{},只能执行紧挨着最近的一条语句<br>②switch(t){<br>    case 情况1:语句1;break;<br>    case 情况2:语句2;break;<br>    ……<br>    default:语句<br>}<br>case为t可能的所有值<br>break不能省略，如果没有break则从满足条件的语句开始执行后面所有的语句<br>switch语句使用于变量值为简单的数字或者符号<br>③for循环语法：<br>  for(声明变量;结束循环条件;改变变量){循环体}</p>
+<h3 id="3-其他获取元素的方式"><a href="#3-其他获取元素的方式" class="headerlink" title="3.其他获取元素的方式"></a>3.其他获取元素的方式</h3><p>①通过标签名获取元素<br>  document.getElementsByTagName(“标签名”);<br>  获取出来的为数组，具体某个值用下标获取<br>②通过类名获取元素<br>  document.getElementsByClassName(“类名”);<br>  获取出来的为数组，具体某个值用下标获取<br>③通过父元素获取子元素<br>  先是把父元素获取到，然后<br>  父元素.getElementsByTagName(“子元素标签名”);<br>  父元素.getElementsByClassName(“子元素类名”);</p>
+<h3 id="4-双层for循环"><a href="#4-双层for循环" class="headerlink" title="4.双层for循环"></a>4.双层for循环</h3><p>外面的循环循环一次，里面的循环要循环完<br>可以看成表格，行为外面的循环，列为里面的循环                                                             </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/10/day_04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shi'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/10/day_04/" itemprop="url">day_04</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-10T11:13:05+08:00">
+                2020-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-for-in循环（一般来循环对象）"><a href="#1-for-in循环（一般来循环对象）" class="headerlink" title="1.for..in循环（一般来循环对象）"></a>1.for..in循环（一般来循环对象）</h3><p>for(var i in 要循环的变量){}<br>for..in循环数组时，变量i表示下标，循环对象时，变量i表示键名</p>
+<h3 id="2-while"><a href="#2-while" class="headerlink" title="2.while"></a>2.while</h3><p>while语法：</p>
+<p>声明变量;<br>while(结束条件){<br>    循环体;<br>    改变变量;<br>}</p>
+<p>do..while语句语法：</p>
+<p>声明变量;<br>do{<br>     循环体;<br>     改变变量;<br>}while(结束循环条件);</p>
+<p>如果一开始条件不满足时，while不会执行，do..while会执行一次</p>
+<h3 id="3-break-终止循环"><a href="#3-break-终止循环" class="headerlink" title="3.break 终止循环"></a>3.break 终止循环</h3><p>  continue 跳出本次循环</p>
+<h3 id="4-this"><a href="#4-this" class="headerlink" title="4.this"></a>4.this</h3><p>this的位置不同，指向也不一样<br>全局：可以在任何地方访问<br>this指向：<br>①在全局中，this指向window<br>②在事件中，谁触发事件，this指向谁<br>③谁调用，指向谁</p>
+<h3 id="5-自定义属性"><a href="#5-自定义属性" class="headerlink" title="5.自定义属性"></a>5.自定义属性</h3><p>元素.自定义属性名 = 自定义属性值;</p>
+<h3 id="6-自定义下标"><a href="#6-自定义下标" class="headerlink" title="6.自定义下标"></a>6.自定义下标</h3><p>元素.自定义属性名 = 索引值;</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/10/day_05/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shi'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/10/day_05/" itemprop="url">day_05</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-10T11:13:05+08:00">
+                2020-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-函数"><a href="#1-函数" class="headerlink" title="1.函数"></a>1.函数</h3><p>函数：在被调用时执行可重复的代码<br>声明函数<br>function 函数名(){可重复的代码}<br>调用<br>函数名()</p>
+<h3 id="2-函数表达式"><a href="#2-函数表达式" class="headerlink" title="2.函数表达式"></a>2.函数表达式</h3><p> var fun = function(){};<br> fun();<br>有表达式和函数声明时，优先执行表达式</p>
+<h3 id="3-函数的使用范围"><a href="#3-函数的使用范围" class="headerlink" title="3.函数的使用范围"></a>3.函数的使用范围</h3><p>①封装<br>②作为事件处理函数<br>正确写法：demo.onclick = aa;<br>错误写法：demo.onclick = aa(); //aa()相当于调用函数aa，点击事件没有被触发，aa函数就执行了<br>③作为对象中的方法<br>var obj={name:”张三”,fn:function(){}}<br>obj.fn();<br>④传参 </p>
+<h3 id="4-使用函数"><a href="#4-使用函数" class="headerlink" title="4.使用函数"></a>4.使用函数</h3><p>参数：<br>     实参：实际的参数<br>     形参：形式上的参数<br>function fun(a,b){} 形参 var a a代表10,b代表20;<br>fun(10,20);//实参<br>①当形参个数与实参个数不一样时，多余的实参不参与计算<br>②当形参个数与实参个数不一样时，多余的行参undefined<br>③实参可以是任意类型，一般不传null和undefined，没有意义<br>function fun(a){<br>    a(); 代表执行回调函数<br>}<br>fun(function(){console.log(1)}); 回调函数</p>
+<p>function fun1(a,b,c,e,f){<br>    arguments; 函数中的内置对象，类似数组，arguments中的参数个数由实参决定，形参可以不用写<br>}<br>fun1(1,2,3,4,5,6);</p>
+<h3 id="5-参数问题"><a href="#5-参数问题" class="headerlink" title="5.参数问题"></a>5.参数问题</h3><h3 id="6-函数的作用域"><a href="#6-函数的作用域" class="headerlink" title="6.函数的作用域"></a>6.函数的作用域</h3><p>作用域：变量或者函数的使用范围<br>作用域链：变量或者函数的查找机制，从内向外查找 自己–父–全局<br>全局变量：可以在任意地方使用，一个地方更改全部都更改<br>局部变量：在函数内部声明的变量不能在函数外使用</p>
+<h3 id="7-预解析（定义了变量，但是没去赋值，因为函数没有执行到赋值的那一步，结果为undefined）"><a href="#7-预解析（定义了变量，但是没去赋值，因为函数没有执行到赋值的那一步，结果为undefined）" class="headerlink" title="7.预解析（定义了变量，但是没去赋值，因为函数没有执行到赋值的那一步，结果为undefined）"></a>7.预解析（定义了变量，但是没去赋值，因为函数没有执行到赋值的那一步，结果为undefined）</h3><p>①找 var function a=undefined<br>②逐行执行，遇到表达式 +-*/= a=10</p>
+<h3 id="8-函数返回值"><a href="#8-函数返回值" class="headerlink" title="8.函数返回值"></a>8.函数返回值</h3><p>return<br>return后面的代码不会被执行</p>
+<h3 id="9-封装函数"><a href="#9-封装函数" class="headerlink" title="9.封装函数"></a>9.封装函数</h3><p>封装：<br> ①先把主体代码写出来<br> ②找能用参数代替的值<br> ③用函数封装，把结果返回<br> ④使用</p>
+<h3 id="10-获取属性"><a href="#10-获取属性" class="headerlink" title="10.获取属性"></a>10.获取属性</h3><p>标准浏览器获取元素样式（ie不兼容）：getComputedStyle(要获取的元素).元素属性<br>            style只能获取到行内样式，这个可以全部都获取到<br>ie：元素.currentStyle.属性</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/10/day_06/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shi'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/10/day_06/" itemprop="url">day_06</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-10T11:13:05+08:00">
+                2020-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-定时器（js的内置函数）"><a href="#1-定时器（js的内置函数）" class="headerlink" title="1.定时器（js的内置函数）"></a>1.定时器（js的内置函数）</h3><p>setTimeout：一次性定时器，让函数延迟一定时间执行（一次）<br>setInterval：重复执行的定时器</p>
+<h3 id="2-setTimeout"><a href="#2-setTimeout" class="headerlink" title="2.setTimeout"></a>2.setTimeout</h3><p>语法：<br>  setTimeout(要延迟执行的函数，延迟时间(ms))<br>  或<br>  定义一个函数之后setTimeout(函数名，延迟时间)</p>
+<h3 id="3-setInterval"><a href="#3-setInterval" class="headerlink" title="3.setInterval"></a>3.setInterval</h3><p>  setInterval(函数，间隔时间)，重复性的定时器，函数会每隔一段时间执行一次<br>覆盖内容<br>document.body.innerText = 变量名;</p>
+<h3 id="4-清除定时器（在定时器开始之前清除才有效果）"><a href="#4-清除定时器（在定时器开始之前清除才有效果）" class="headerlink" title="4.清除定时器（在定时器开始之前清除才有效果）"></a>4.清除定时器（在定时器开始之前清除才有效果）</h3><p>给定时器赋个变量名，然后clearTimeout(变量名)<br>给定时器赋个变量名，然后clearInterval(变量名)</p>
+<h3 id="5-元素的运动"><a href="#5-元素的运动" class="headerlink" title="5.元素的运动"></a>5.元素的运动</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/10/day_09/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shi'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/10/day_09/" itemprop="url">day_09</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-10T11:13:05+08:00">
+                2020-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-js的构成"><a href="#1-js的构成" class="headerlink" title="1.js的构成"></a>1.js的构成</h3><p> ECMAScript：规定js和核心规则<br>    数据类型、流程语句、解析机制<br>    ECMAScript 3.0 -&gt; ECMAScript5<br> DOM：document object model 文档对象模型<br> BOM：browser object model 浏览器对象模型 </p>
+<h3 id="2-子节点"><a href="#2-子节点" class="headerlink" title="2.子节点"></a>2.子节点</h3><p>DOM：描绘html文件内部构成的一个模型（一个树状结构，由层次节点构成）<br>层次由标签 文本 属性 注释……构成<br>获取子节点<br>①父元素.children 获取htmlcollection:类数组结构（标准浏览器使用）<br>获取子元素 ie6-ie8：会获取注释<br>②childNodes:nodeList 节点列表<br>会获取到换行，换行是文本节点<br>ie9-：不会获取到换行</p>
+<h3 id="3-每个节点都有一些属性"><a href="#3-每个节点都有一些属性" class="headerlink" title="3.每个节点都有一些属性"></a>3.每个节点都有一些属性</h3><p>①父元素.nodeType:节点类型<br>  3 -&gt; text(文本节点)  1 -&gt; 元素节点  2 -&gt; 属性节点  8 -&gt; 注释节点<br>②nodeName:节点名<br>  例：LI(大写的标签名)         #text文本<br>③nodeValue:节点值<br>只有文本节点和注释节点才有</p>
+<h3 id="4-父节点"><a href="#4-父节点" class="headerlink" title="4.父节点"></a>4.父节点</h3><p>子元素.parentNode 获取父节点<br>每个节点可以有多个子节点，但是只有一个父节点<br>offsetParent（定位父节点）找有定位的父元素，一层一层找，最后为body</p>
+<h3 id="5-兄弟节点"><a href="#5-兄弟节点" class="headerlink" title="5.兄弟节点"></a>5.兄弟节点</h3><p>元素.previousSibling 上一个兄弟节点（注意换行算是文本节点）非标准浏览器不会获取到换行<br>元素.previousElementSibling 上一个兄弟元素 标准浏览器<br>元素.nextSibling 下一个兄弟节点（换行是节点）非标准浏览器不会获取到换行<br>元素.nextElementSibling 下一个兄弟元素 标准浏览器</p>
+<h3 id="6-首尾节点"><a href="#6-首尾节点" class="headerlink" title="6.首尾节点"></a>6.首尾节点</h3><p>第一个子节点和最后一个子节点<br>父元素.firstElementChild 第一个元素子节点 标准浏览器<br>父元素.firstChild 第一个子节点（换行是节点） 非标准浏览器不会获取到换行<br>父元素.lastElementChild  最后一个元素子节点 标准浏览器<br>父元素.lastChild 最后一个子节点（换行是节点） 非标准浏览器不会获取到换行</p>
+<h3 id="7-创建节点"><a href="#7-创建节点" class="headerlink" title="7.创建节点"></a>7.创建节点</h3><p>var cLi = document.createElement(“标签名”)  创建标签<br>父元素.appendChild(cLi);  作为父元素的最后一个元素来添加<br>cLi.innerHTML = “串串” 添加内容<br>var text = document.creatTextNode(“串串”);  创建文本节点<br>cLi.appendChild(text); 追加进入内容</p>
+<h3 id="8-插入节点"><a href="#8-插入节点" class="headerlink" title="8.插入节点"></a>8.插入节点</h3><p>只能插入在子元素的前面<br>父元素.insertBefore(cLi,要插入的子元素)<br>在父元素内部某个元素前面插入一个元素</p>
+<h3 id="9-已存在的元素的插入是改变元素的物理位置"><a href="#9-已存在的元素的插入是改变元素的物理位置" class="headerlink" title="9.已存在的元素的插入是改变元素的物理位置"></a>9.已存在的元素的插入是改变元素的物理位置</h3><h3 id="10-删除"><a href="#10-删除" class="headerlink" title="10.删除"></a>10.删除</h3><p>删除的元素.remove(); 移除节点<br>父元素.removeChid(子元素); 移除子节点</p>
+<h3 id="11-替换"><a href="#11-替换" class="headerlink" title="11.替换"></a>11.替换</h3><p>父元素.replaceChild(新的节点，被替换的节点)</p>
+<h3 id="12-克隆"><a href="#12-克隆" class="headerlink" title="12.克隆"></a>12.克隆</h3><p>var 变量名 = 需要克隆的元素.cloneNode(true);<br>父元素.appendChild(变量名)<br>false(默认)：浅克隆（克隆元素）<br>true(默认)：深克隆（克隆元素和元素的内部结构）</p>
+<h3 id="13-新的获取元素的方法-ie8"><a href="#13-新的获取元素的方法-ie8" class="headerlink" title="13.新的获取元素的方法 ie8+"></a>13.新的获取元素的方法 ie8+</h3><p>通过选择器语法获取对应的元素：document.querySelectorAll(“父 子”)<br>通过选择器语法获取对应的元素的第一项：document.querySelector(“父 子”);</p>
+<h3 id="14-属性操作"><a href="#14-属性操作" class="headerlink" title="14.属性操作"></a>14.属性操作</h3><p>getAttribute(属性名)   获取属性（包括自定义属性）<br>setAttribute(属性名,属性值)  设置属性（attr,value）</p>
+<h3 id="15-表格"><a href="#15-表格" class="headerlink" title="15.表格"></a>15.表格</h3><p>tab.tHead 获取thead<br>tab.tBodies[0] 获取tbody (tBodies  复数项)<br>tab.tFoot 获取tFoot<br>tab.tBodies[0].rows[0] 获取tr<br>tab.tBodies[0].rows[0].cells[1] 获取td</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/10/day_10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shi'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/10/day_10/" itemprop="url">day_10</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-10T11:13:05+08:00">
+                2020-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-表单获取元素"><a href="#1-表单获取元素" class="headerlink" title="1.表单获取元素"></a>1.表单获取元素</h3><p>先获取到form元素<br>通过name值来得到表单元素<br>同一个name获取的是数组类型，需要加下标</p>
+<h3 id="2-表单事件"><a href="#2-表单事件" class="headerlink" title="2.表单事件"></a>2.表单事件</h3><p>form.onsubmit = function(){}<br>return true 表单继续提交<br>return false 阻止表单继续提交<br>form.onreset = function(){}<br>confirm() 带选择项的对话框 点击确定：返回true 取消：返回false<br>form.元素.onfocus = function(){} 表单元素获取焦点<br>form.元素.onblur = function(){} 表单元素失去焦点</p>
+<h3 id="3-表单操作"><a href="#3-表单操作" class="headerlink" title="3.表单操作"></a>3.表单操作</h3><p>表单外的元素点击提交表单内容<br>form.submit(); 触发表单提交事件<br>form.reset(); 触发表单重置事件<br>form.元素.focus() 元素获取焦点的方法<br>form.元素.select() 元素里面的内容被选中的事件</p>
+<h3 id="4-BOM"><a href="#4-BOM" class="headerlink" title="4.BOM"></a>4.BOM</h3><p>BOM：window就是BOM的核心<br>    ①提供了操作浏览器相关的接口（API）<br>    ②js的顶层对象 global object，定义的全局变量会自动注册为window的属性，函数变成window的方法</p>
+<h3 id="5-BOM的窗口"><a href="#5-BOM的窗口" class="headerlink" title="5.BOM的窗口"></a>5.BOM的窗口</h3><p>alert() 警告弹窗<br>window.confirm() 确认弹窗（确认提示信息）点击确定：返回true 取消：返回false<br>window.prompt(“提示信息”)带输入框的弹窗（确认提示信息，默认字符串） 点击确定：返回输入文本 取消：返回null</p>
+<h3 id="6-open和close"><a href="#6-open和close" class="headerlink" title="6.open和close"></a>6.open和close</h3><p>open()  打开页面（url，打开方式（_blank默认,新窗口打开,_self，当前窗口打开），新窗口的一些配置项）<br>例：open(“网址”,”_self”,”width=300，height=300”); 打开一个新页面,_self代表在本页面打开<br>行间使用open：不能省掉window<br>close() 关闭当前窗口</p>
+<h3 id="7-location"><a href="#7-location" class="headerlink" title="7.location"></a>7.location</h3><p>location:保存用户的地址栏信息，同时也有一定的导航功能<br>完整的url：location.href<br>location = “网址” 页面跳转<br>主机信息：host = hostName+port<br>location.hostName：主机名（IP地址）  location.port：端口号<br>location.pathName：文件路径<br>location.protocol：协议<br>location.hast（哈希值）<br>location.search（查询内容）</p>
+<h3 id="8-navigator"><a href="#8-navigator" class="headerlink" title="8.navigator"></a>8.navigator</h3><p>navigator:保存用户代理信息</p>
+<h3 id="9-history"><a href="#9-history" class="headerlink" title="9.history"></a>9.history</h3><p>history:保存用户历史访问信息，历史窗口访问<br>history.go(-1) 退后一个页面<br>history.go(1)前进一个页面</p>
+<h3 id="10-client"><a href="#10-client" class="headerlink" title="10.client"></a>10.client</h3><p>clientWidth = width+padding 内部容器的宽<br>clientHight  内部容器的高<br>clientLeft 左边框的宽度<br>clientTop 上边框的宽度<br>document.documentElement.clientWidth 窗口可视区域的宽<br>document.documentElement.clientHight 窗口可视区域的高</p>
+<h3 id="11-offset"><a href="#11-offset" class="headerlink" title="11.offset"></a>11.offset</h3><p>offsetWidth  width+padding+border 元素的占位宽度<br>offsetHight 元素的占位高度<br>offsetLeft 距离定位参考元素的左偏移值<br>offsetTop 距离定位参考元素的上偏移值</p>
+<h3 id="12-scroll"><a href="#12-scroll" class="headerlink" title="12.scroll"></a>12.scroll</h3><p>元素内部内容的实际宽高<br>scrollWidth<br>scrollHight<br>元素.onscroll = function(){}<br>scrollLeft 内容被卷动到左侧的部分宽度值<br>scrollTop 内容被卷动到上侧的部分高度值<br>window.onscroll = function(){<br>    console.log(document.documentElement.scrollTop) //网页内容被卷动到上侧的高度<br>}</p>
+<h3 id="13-懒加载"><a href="#13-懒加载" class="headerlink" title="13.懒加载"></a>13.懒加载</h3><h3 id="14-BOM事件"><a href="#14-BOM事件" class="headerlink" title="14.BOM事件"></a>14.BOM事件</h3><p>onload<br>onscroll<br>window.onresize改变窗口尺寸时触发</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/10/day_11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shi'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/10/day_11/" itemprop="url">day_11</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-10T11:13:05+08:00">
+                2020-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-事件"><a href="#1-事件" class="headerlink" title="1.事件"></a>1.事件</h3><p>交互行为触发的的那个瞬间，事件是可以被js监听到的，可以执行相应的事件处理函数（观察者模式）<br>事件的订阅和发布<br>事件对象：保存事件发生时相关信息的对象（chrome，ie:window.event，低版本用函数参数）<br>event.type 事件类型<br>event.target 事件发生的元素<br>event.altKey 事件发生的时候用户是否按住alt<br>event.clientX 事件发生时鼠标相对于可视窗口左侧的偏移值<br>event.clientY 事件发生时鼠标相对于可视窗口上侧的偏移值<br>event.pageX 事件发生时鼠标相较于文档左侧的偏移值<br>event.pageY 事件发生时鼠标相较于文档上侧的偏移值</p>
+<h3 id="2-事件绑定"><a href="#2-事件绑定" class="headerlink" title="2.事件绑定"></a>2.事件绑定</h3><p>DOM 2级事件<br>标准方法<br>添加事件监听器（事件类型，事件处理函数(handle)，boolean事件处理函数在捕获阶段执行还是冒泡阶段执行）<br>元素.addEventListener(“click”,fn1)<br>低版本：ie<br>元素.attachEvent(“onclick”,fn1)<br>区别 addEventListener:标准方法  事件类型不加on 事件处理函数的this===绑定事件的元素 添加boolean事件处理函数在捕获阶段执行还是冒泡阶段执行<br>     attachEvent:ie的方法 事件类型要加on 事件处理函数的this===window  没有第三个参数，只有事件冒泡</p>
+<h3 id="3-移除事件"><a href="#3-移除事件" class="headerlink" title="3.移除事件"></a>3.移除事件</h3><p>标准方法<br>移除事件监听器<br>元素.removeEventListener(“click”,fn1) 移除的事件的事件处理函数一定要是绑定的那个函数（不能使用匿名函数）<br>低版本ie<br>元素.detachEvent(“onclick”,fn1)</p>
+<h3 id="4-事件流"><a href="#4-事件流" class="headerlink" title="4.事件流"></a>4.事件流</h3><div id = "outer">
+    <div id = "inner"></div>
+</div>
+事件流：描绘事件在文档中传递顺序。（谁先接受事件，谁后接受事件）
+捕获事件流：事件从不具体元素（window）向具体的元素传递（inner）。事件从父元素传递到子元素   
+元素.addEventListener("click",fn1,true) 第三个参数：事件会在捕获阶段触发（true）
+冒泡事件流：和捕获事件流相反，事件从具体元素（inner）向不具体元素（window）传递。事件从子元素传递到父元素 
+元素.addEventListener("click",fn1,true )第三个参数：事件和捕获事件流相反（默认:false）
+### 5.DOM2事件流：事件传递分为3个阶段，①事件捕获阶段②目标元素上停留③事件冒泡阶段
+### 6.阻止事件冒泡
+标准浏览器使用
+var ev = event || e; e代表函数传入的第一个参数
+ev.stopPropagetion()
+低版本ie：ev.cancelBubble = true;
+### 7.阻止默认事件
+标准浏览器使用
+ev.preventDefault();
+DOM 零级阻止：return false
+ie低版本：ev.returnValue = false;
+### 8.键盘事件
+onkeydown 
+按键按下去触发的事件
+document.onkeydown = function(e){
+    var ev = event || e;
+    ev.keyCode 获取案件的键码值
+}
+onkeyup 按键抬起
+onkeypress 按键按压
+### 9.滚轮事件
+标准chrome,ie
+onmousewheel
+document.onmousewheel = function(e){
+    var ev = event || e;
+    ev.wheelDelta 向上滚为120，向下滚为-120
+}
+火狐
+document.onmousewheel = fn1;
+document.addEventListener("DOMMouseScroll",fn1);
+function fn1(e){
+    var ev = event || e;
+    ev.detail 向上滚为-3，向下滚为+3
+}
+### 10.事件委托
+事件委托（事件代理）：元素将事件委托给父元素来处理（通过事件冒泡）
+父元素对事件源对象进行甄别，然后进行对应的处理
+好处：①可以给后续添加的元素绑定事件
+      ②可以优化性能                                                                                                                                                                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/10/day_12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shi'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/10/day_12/" itemprop="url">day_12</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-10T11:13:05+08:00">
+                2020-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-拖拽"><a href="#1-拖拽" class="headerlink" title="1.拖拽"></a>1.拖拽</h3><p>解决文字拖动问题<br>return false</p>
+<h3 id="2-全局捕获（在低版本ie运行）"><a href="#2-全局捕获（在低版本ie运行）" class="headerlink" title="2.全局捕获（在低版本ie运行）"></a>2.全局捕获（在低版本ie运行）</h3><p>全局捕获：监听页面的该类型事件，触发事件处理函数（只会触发一次）<br>元素.setCapture(); 设置全局捕获<br>元素.releaseCapture(); 释放全局捕获</p>
+<h3 id="3-元素运动"><a href="#3-元素运动" class="headerlink" title="3.元素运动"></a>3.元素运动</h3><h3 id="4-回调函数"><a href="#4-回调函数" class="headerlink" title="4.回调函数"></a>4.回调函数</h3><p>callback（cb）：回调函数，作为主函数的参数传入，主函数满足一定条件，回调函数就会执行</p>
 
           
         
@@ -358,6 +1607,10 @@
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+  </nav>
+
 
 
           </div>
@@ -401,7 +1654,7 @@
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

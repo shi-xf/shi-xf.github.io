@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.事件交互行为触发的的那个瞬间，事件是可以被js监听到的，可以执行相应的事件处理函数（观察者模式）事件的订阅和发布事件对象：保存事件发生时相关信息的对象（chrome，ie:window.event，低版本用函数参数）event.type 事件类型event.target 事件发生的元素event.altKey 事件发生的时候用户是否按住altevent.clientX 事件发生时鼠标相对于可视">
+<meta property="og:type" content="article">
+<meta property="og:title" content="day_11">
+<meta property="og:url" content="http://yoursite.com/2020/05/10/day_11/index.html">
+<meta property="og:site_name" content="shi&#39;blog">
+<meta property="og:description" content="1.事件交互行为触发的的那个瞬间，事件是可以被js监听到的，可以执行相应的事件处理函数（观察者模式）事件的订阅和发布事件对象：保存事件发生时相关信息的对象（chrome，ie:window.event，低版本用函数参数）event.type 事件类型event.target 事件发生的元素event.altKey 事件发生的时候用户是否按住altevent.clientX 事件发生时鼠标相对于可视">
+<meta property="article:published_time" content="2020-05-10T03:13:05.298Z">
+<meta property="article:modified_time" content="2020-05-10T02:12:20.666Z">
+<meta property="article:author" content="Shi">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/05/10/day_11/"/>
+
+
+
+
+
+  <title>day_11 | shi'blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">shi'blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/10/day_11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shi'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">day_11</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-10T11:13:05+08:00">
+                2020-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="1-事件"><a href="#1-事件" class="headerlink" title="1.事件"></a>1.事件</h3><p>交互行为触发的的那个瞬间，事件是可以被js监听到的，可以执行相应的事件处理函数（观察者模式）<br>事件的订阅和发布<br>事件对象：保存事件发生时相关信息的对象（chrome，ie:window.event，低版本用函数参数）<br>event.type 事件类型<br>event.target 事件发生的元素<br>event.altKey 事件发生的时候用户是否按住alt<br>event.clientX 事件发生时鼠标相对于可视窗口左侧的偏移值<br>event.clientY 事件发生时鼠标相对于可视窗口上侧的偏移值<br>event.pageX 事件发生时鼠标相较于文档左侧的偏移值<br>event.pageY 事件发生时鼠标相较于文档上侧的偏移值</p>
+<h3 id="2-事件绑定"><a href="#2-事件绑定" class="headerlink" title="2.事件绑定"></a>2.事件绑定</h3><p>DOM 2级事件<br>标准方法<br>添加事件监听器（事件类型，事件处理函数(handle)，boolean事件处理函数在捕获阶段执行还是冒泡阶段执行）<br>元素.addEventListener(“click”,fn1)<br>低版本：ie<br>元素.attachEvent(“onclick”,fn1)<br>区别 addEventListener:标准方法  事件类型不加on 事件处理函数的this===绑定事件的元素 添加boolean事件处理函数在捕获阶段执行还是冒泡阶段执行<br>     attachEvent:ie的方法 事件类型要加on 事件处理函数的this===window  没有第三个参数，只有事件冒泡</p>
+<h3 id="3-移除事件"><a href="#3-移除事件" class="headerlink" title="3.移除事件"></a>3.移除事件</h3><p>标准方法<br>移除事件监听器<br>元素.removeEventListener(“click”,fn1) 移除的事件的事件处理函数一定要是绑定的那个函数（不能使用匿名函数）<br>低版本ie<br>元素.detachEvent(“onclick”,fn1)</p>
+<h3 id="4-事件流"><a href="#4-事件流" class="headerlink" title="4.事件流"></a>4.事件流</h3><div id = "outer">
+    <div id = "inner"></div>
+</div>
+事件流：描绘事件在文档中传递顺序。（谁先接受事件，谁后接受事件）
+捕获事件流：事件从不具体元素（window）向具体的元素传递（inner）。事件从父元素传递到子元素   
+元素.addEventListener("click",fn1,true) 第三个参数：事件会在捕获阶段触发（true）
+冒泡事件流：和捕获事件流相反，事件从具体元素（inner）向不具体元素（window）传递。事件从子元素传递到父元素 
+元素.addEventListener("click",fn1,true )第三个参数：事件和捕获事件流相反（默认:false）
+### 5.DOM2事件流：事件传递分为3个阶段，①事件捕获阶段②目标元素上停留③事件冒泡阶段
+### 6.阻止事件冒泡
+标准浏览器使用
+var ev = event || e; e代表函数传入的第一个参数
+ev.stopPropagetion()
+低版本ie：ev.cancelBubble = true;
+### 7.阻止默认事件
+标准浏览器使用
+ev.preventDefault();
+DOM 零级阻止：return false
+ie低版本：ev.returnValue = false;
+### 8.键盘事件
+onkeydown 
+按键按下去触发的事件
+document.onkeydown = function(e){
+    var ev = event || e;
+    ev.keyCode 获取案件的键码值
+}
+onkeyup 按键抬起
+onkeypress 按键按压
+### 9.滚轮事件
+标准chrome,ie
+onmousewheel
+document.onmousewheel = function(e){
+    var ev = event || e;
+    ev.wheelDelta 向上滚为120，向下滚为-120
+}
+火狐
+document.onmousewheel = fn1;
+document.addEventListener("DOMMouseScroll",fn1);
+function fn1(e){
+    var ev = event || e;
+    ev.detail 向上滚为-3，向下滚为+3
+}
+### 10.事件委托
+事件委托（事件代理）：元素将事件委托给父元素来处理（通过事件冒泡）
+父元素对事件源对象进行甄别，然后进行对应的处理
+好处：①可以给后续添加的元素绑定事件
+      ②可以优化性能                                                                                                                                                                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/05/10/day_12/" rel="next" title="day_12">
+                <i class="fa fa-chevron-left"></i> day_12
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/05/10/day_10/" rel="prev" title="day_10">
+                day_10 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Shi</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7Carchive">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-事件"><span class="nav-number">1.</span> <span class="nav-text">1.事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-事件绑定"><span class="nav-number">2.</span> <span class="nav-text">2.事件绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-移除事件"><span class="nav-number">3.</span> <span class="nav-text">3.移除事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-事件流"><span class="nav-number">4.</span> <span class="nav-text">4.事件流</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shi</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
